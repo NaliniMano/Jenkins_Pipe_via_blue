@@ -16,7 +16,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        input 'Build Approval'
+        input(message: 'Build Approval', id: 'Certify')
       }
     }
 
