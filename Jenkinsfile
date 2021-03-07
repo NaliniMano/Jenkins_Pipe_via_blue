@@ -9,13 +9,14 @@ pipeline {
 
     stage('Test') {
       steps {
-        echo 'Smoke Test completd'
+        git 'https://github.com/NaliniMano/Salesforce'
+        bat 'bat mvn test'
       }
     }
 
-    stage('Staging Envt') {
+    stage('Deploy') {
       steps {
-        echo 'code stagged successfully'
+        input 'Build Approval'
       }
     }
 
